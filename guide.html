@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guide · Latin Vocab</title>
+  <meta name="description" content="How to read the Whitaker's Words Latin vocab tables: every column explained, what the WORDS codes mean, how stems work and how to copy the tables into Excel.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a2c1d'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <a class="brand" href="index.html">Whitaker's Words <span>· Latin vocab</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li><a href="vocab-table.html">Vocab table</a></li>
+      <li><a href="all-fields.html">All fields</a></li>
+      <li><a href="guide.html" aria-current="page">Guide</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <h1>Guide</h1>
+    <p>What every column on the site means, what Whitaker's codes stand for, and how to get the tables into Excel.</p>
+  </header>
+
+  <main class="prose">
+    <nav class="toc" aria-label="Contents">
+      <strong>Contents</strong>
+      <ol>
+        <li><a href="#pages">Which page should I use?</a></li>
+        <li><a href="#vocab-columns">Vocab table columns</a></li>
+        <li><a href="#fields-columns">All fields columns</a></li>
+        <li><a href="#stems">How stems work</a></li>
+        <li><a href="#numbers">Declension &amp; conjugation numbers</a></li>
+        <li><a href="#codes">Code tables</a></li>
+        <li><a href="#senses">Reading the senses</a></li>
+        <li><a href="#excel">Copying into Excel</a></li>
+        <li><a href="#limits">Limitations</a></li>
+        <li><a href="#credits">Credits</a></li>
+      </ol>
+    </nav>
+
+    <!-- ============================================================ -->
+    <h2 id="pages">1. Which page should I use?</h2>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Page</th><th>Best for</th><th>Rows</th><th>Columns</th></tr></thead>
+        <tbody>
+          <tr><td><a href="browse.html">Browse</a></td><td>Looking words up. Fast, 100 rows a page.</td><td>38,091</td><td>Vocab layout</td></tr>
+          <tr><td><a href="vocab-table.html">Vocab table</a></td><td>Copying the whole vocab list into a spreadsheet.</td><td>38,091 over 5 pages</td><td>Vocab layout, plus CSV download</td></tr>
+          <tr><td><a href="all-fields.html">All fields</a></td><td>Seeing everything the dictionary knows about a word: era, region, subject, source, grammar codes.</td><td>39,338 over 5 pages</td><td>25 fixed columns</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Why are there two row counts? About 1,250 dictionary entries are only <em>continuations</em>: extra meanings for the entry just above them (see <a href="#senses">Reading the senses</a>). The vocab pages join these onto the word they belong to. The All fields page keeps them as separate rows, exactly as they are in the data file.</p>
+    <p>Every page has the same search and filters. A search matches the <em>start</em> of a word, so <code>war</code> finds “war” and “warfare” but not “towards”.</p>
+
+    <!-- ============================================================ -->
+    <h2 id="vocab-columns">2. Vocab table columns</h2>
+    <p>Used on <a href="browse.html">Browse</a> and <a href="vocab-table.html">Vocab table</a>. One row per word.</p>
+
+    <h3>Latin (4 columns)</h3>
+    <p>The forms you'd find in a dictionary heading, rebuilt from the word's stems (see <a href="#stems">How stems work</a>). Which forms appear depends on the word type:</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Word type</th><th>Latin columns</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>noun</td><td>nominative, genitive</td><td><em>rex, regis</em></td></tr>
+          <tr><td>verb</td><td>the four principal parts: 1st person present, infinitive, perfect, supine</td><td><em>amo, amare, amavi, amatum</em></td></tr>
+          <tr><td>deponent verb</td><td>1st person present, infinitive, perfect participle + <em>sum</em></td><td><em>hortor, hortari, hortatus sum</em></td></tr>
+          <tr><td>adjective</td><td>masculine, feminine, neuter (or nominative + genitive for one-termination adjectives)</td><td><em>bonus, bona, bonum</em>; <em>ingens, ingentis</em></td></tr>
+          <tr><td>pronoun</td><td>masculine, feminine, neuter, or nominative + genitive for personal pronouns</td><td><em>hic, haec, hoc</em>; <em>ego, mei</em></td></tr>
+          <tr><td>numeral</td><td>cardinal, ordinal, distributive, numeral adverb</td><td><em>unus, primus, singuli, semel</em></td></tr>
+          <tr><td>adverb, preposition, conjunction, interjection</td><td>the word itself</td><td><em>bene</em>; <em>in</em>; <em>et</em></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Word type</h3>
+    <p>One of: noun, verb, deponent verb (includes semi-deponents such as <em>audeo</em>), adjective, adverb, pronoun, numeral, preposition, conjunction, interjection.</p>
+
+    <h3>Word Subtype</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Word type</th><th>Possible subtypes</th></tr></thead>
+        <tbody>
+          <tr><td>noun</td><td>1st–5th declension, indeclinable, abbreviation</td></tr>
+          <tr><td>verb</td><td>1st conj, 2nd conj, 3rd conj, Mixed conj (3rd -io verbs like <em>capio</em>), 4th conj, irregular conj (<em>fero, eo, volo, possum…</em>), archaic forms, indeclinable</td></tr>
+          <tr><td>adjective</td><td>1st &amp; 2nd declension, 2nd declension (Greek-type), 3rd declension, comparative, superlative, comparative/superlative only, indeclinable, abbreviation</td></tr>
+          <tr><td>adverb</td><td>blank, comparative or superlative</td></tr>
+          <tr><td>pronoun</td><td>personal, reflexive, demonstrative, relative, interrogative, indefinite, adjectival</td></tr>
+          <tr><td>numeral</td><td>cardinal, ordinal, distributive, numeral adverb</td></tr>
+          <tr><td>preposition</td><td>accusative-, ablative- or genitive-governing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Additional Info</h3>
+    <p>Everything else worth knowing, separated by semicolons:</p>
+    <ul>
+      <li><strong>Nouns:</strong> gender (masculine, feminine, neuter, common) and kind (person, place name, proper name, group, abstract…), plus “Greek-type” for Greek-style endings.</li>
+      <li><strong>Verbs:</strong> transitive, intransitive, + dative, + ablative, impersonal, semi-deponent, compound of sum, defective, “perfect forms only (present meaning)” for verbs like <em>odi</em>.</li>
+      <li><strong>Adjectives:</strong> comparative and superlative (e.g. <em>comp. melior, sup. optimus</em>), number of terminations, “genitive in -ius” for <em>unus, totus</em> etc.</li>
+      <li><strong>Prepositions:</strong> the case taken (+ acc, + abl).</li>
+      <li><strong>All words:</strong> the era if it isn't general (early Latin, late Latin, medieval…), the subject area (legal, military, poetic…), and any bracketed example phrases from the meanings.</li>
+    </ul>
+
+    <h3>English (as many columns as needed)</h3>
+    <p>The meanings, split at every comma and semicolon that isn't inside brackets. A word with ten meanings fills ten English columns; most have fewer. Duplicates are removed.</p>
+
+    <h3>Frequency</h3>
+    <p>How common the word is in Latin literature, from <span class="f-A"><strong>very frequent</strong></span> down to <span class="f-E"><strong>very rare</strong></span>. See the <a href="#code-frequency">frequency codes</a>. Filter with “Common or higher” to get a sensible list for learning.</p>
+
+    <!-- ============================================================ -->
+    <h2 id="fields-columns">3. All fields columns</h2>
+    <p>Used on <a href="all-fields.html">All fields</a>. One row per entry in the data file, 25 columns. Columns that don't apply to a word (like <em>Gender</em> for a verb) are left blank.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Column</th><th>Data field</th><th>Which words</th><th>What it means</th></tr></thead>
+        <tbody>
+          <tr><td>Stem 1–4</td><td class="code"><code>stems</code></td><td>all</td><td>The stems endings are added to. See <a href="#stems">How stems work</a>. <strong>—</strong> means the stem exists but is empty (the word has no such form). A blank cell means the word type has fewer stems.</td></tr>
+          <tr><td>Part of speech</td><td class="code"><code>pos</code></td><td>all</td><td>Noun, verb, adjective… <a href="#code-pos">codes</a></td></tr>
+          <tr><td>Word Subtype</td><td>(worked out)</td><td>all</td><td>Same as the vocab table's <a href="#vocab-columns">Word Subtype</a>: declension, conjugation, pronoun kind etc. in plain words.</td></tr>
+          <tr><td>Age</td><td class="code"><code>age</code></td><td>all</td><td>The period the word was used in. <a href="#code-age">codes</a></td></tr>
+          <tr><td>Geography</td><td class="code"><code>geography</code></td><td>all</td><td>The region the word is particular to, if any. <a href="#code-geography">codes</a></td></tr>
+          <tr><td>Area</td><td class="code"><code>area</code></td><td>all</td><td>The subject the word belongs to (military, legal, religious…). <a href="#code-area">codes</a></td></tr>
+          <tr><td>Frequency</td><td class="code"><code>frequency</code></td><td>all</td><td>How common the word is. <a href="#code-frequency">codes</a></td></tr>
+          <tr><td>Source</td><td class="code"><code>source</code></td><td>all</td><td>Which dictionary or book Whitaker took the word from. <a href="#code-source">codes</a></td></tr>
+          <tr><td>Senses</td><td class="code"><code>senses</code></td><td>all</td><td>The English meanings, exactly as written in the dictionary. See <a href="#senses">Reading the senses</a>.</td></tr>
+          <tr><td>Declension</td><td class="code"><code>declension</code></td><td>nouns, adjectives, pronouns, packons, numerals</td><td>Declension number. See <a href="#numbers">numbers</a>.</td></tr>
+          <tr><td>Declension variant</td><td class="code"><code>declension_variant</code></td><td>same</td><td>Which pattern within the declension (e.g. 2nd declension <em>-us</em> vs. <em>-um</em>).</td></tr>
+          <tr><td>Conjugation</td><td class="code"><code>conjugation</code></td><td>verbs</td><td>Conjugation number. See <a href="#numbers">numbers</a>.</td></tr>
+          <tr><td>Conjugation variant</td><td class="code"><code>conjugation_variant</code></td><td>verbs</td><td>Which pattern within the conjugation (e.g. 3rd variant 4 = 4th conjugation).</td></tr>
+          <tr><td>Gender</td><td class="code"><code>gender</code></td><td>nouns</td><td><a href="#code-gender">codes</a></td></tr>
+          <tr><td>Noun kind</td><td class="code"><code>noun_kind</code></td><td>nouns</td><td>Person, place, thing, abstract idea… <a href="#code-noun_kind">codes</a></td></tr>
+          <tr><td>Pronoun kind</td><td class="code"><code>pronoun_kind</code></td><td>pronouns</td><td>Personal, relative, demonstrative… <a href="#code-pronoun_kind">codes</a></td></tr>
+          <tr><td>Packon kind</td><td class="code"><code>packon_kind</code></td><td>packons</td><td>Same codes as pronoun kind. A <em>packon</em> is a <em>qu-/cu-</em> pronoun that needs a suffix, e.g. <em>quicumque</em>.</td></tr>
+          <tr><td>Verb kind</td><td class="code"><code>verb_kind</code></td><td>verbs</td><td>Transitive, deponent, impersonal… <a href="#code-verb_kind">codes</a></td></tr>
+          <tr><td>Comparison</td><td class="code"><code>comparison</code></td><td>adjectives, adverbs</td><td>Positive, comparative or superlative. <a href="#code-comparison">codes</a></td></tr>
+          <tr><td>Case</td><td class="code"><code>case</code></td><td>prepositions</td><td>The case the preposition takes. <a href="#code-case">codes</a></td></tr>
+          <tr><td>Numeral sort</td><td class="code"><code>numeral_sort</code></td><td>numerals</td><td>Cardinal, ordinal… <a href="#code-numeral_sort">codes</a></td></tr>
+          <tr><td>Numeral value</td><td class="code"><code>numeral_value</code></td><td>numerals</td><td>The number it stands for, e.g. 1 for <em>unus</em>. Blank when not given.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Example: the raw data for <em>rex</em> is <code>{"stems": ["rex", "reg"], "pos": "N", "declension": 3, "declension_variant": 1, "gender": "M", "noun_kind": "P", "age": "X", "area": "L", "geography": "X", "frequency": "A", "source": "X", "senses": "king;"}</code>. On the All fields page that becomes Stem 1 <em>rex</em>, Stem 2 <em>reg</em>, noun, 3rd declension, Gender “Masculine”, Noun kind “Person type / trade”, Area “Legal, government, tax, financial, political, titles”, Frequency “Very frequent”, and so on.</p>
+
+    <!-- ============================================================ -->
+    <h2 id="stems">4. How stems work</h2>
+    <p>Whitaker's dictionary doesn't store whole words. It stores <em>stems</em>, and endings are added to make every form. What each stem is for depends on the word type:</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Word type</th><th>Stem 1</th><th>Stem 2</th><th>Stem 3</th><th>Stem 4</th></tr></thead>
+        <tbody>
+          <tr><td>Noun</td><td>nominative (sometimes the whole nominative, e.g. <em>rex</em>)</td><td>all other cases (<em>reg-</em> → <em>regis</em>)</td><td>–</td><td>–</td></tr>
+          <tr><td>Verb</td><td>present (<em>am-</em> → <em>amo</em>)</td><td>infinitive (<em>am-</em> → <em>amare</em>)</td><td>perfect (<em>amav-</em> → <em>amavi</em>)</td><td>supine / perfect participle (<em>amat-</em> → <em>amatum</em>)</td></tr>
+          <tr><td>Adjective</td><td>masculine nominative (<em>bon-</em>)</td><td>other forms (<em>bon-</em> → <em>bona, bonum</em>)</td><td>comparative (<em>meli-</em> → <em>melior</em>)</td><td>superlative (<em>opti-</em> → <em>optimus</em>)</td></tr>
+          <tr><td>Adverb</td><td>positive (<em>bene</em>)</td><td>comparative (<em>melius</em>)</td><td>superlative (<em>optime</em>)</td><td>–</td></tr>
+          <tr><td>Numeral</td><td>cardinal (<em>un-</em>)</td><td>ordinal (<em>prim-</em>)</td><td>distributive (<em>singul-</em>)</td><td>adverb (<em>semel</em>)</td></tr>
+          <tr><td>Pronoun / packon</td><td>first stem (<em>h-</em> → <em>hic</em>)</td><td>second stem (<em>hu-</em> → <em>huius</em>)</td><td>–</td><td>–</td></tr>
+          <tr><td>Preposition, conjunction, interjection</td><td>the word itself</td><td>–</td><td>–</td><td>–</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>For example, the semi-deponent <em>audeo</em> has stems <em>aud, aud, aus, aus</em> but no real perfect stem, so the vocab table shows <em>audeo, audere, ausus sum</em>.</p>
+
+    <!-- ============================================================ -->
+    <h2 id="numbers">5. Declension &amp; conjugation numbers</h2>
+    <p>The All fields page shows these as numbers; the <em>Word Subtype</em> column turns them into plain words. Whitaker's numbering mostly matches the textbook one, with a few extras:</p>
+    <h3>Verb conjugations</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Conjugation . variant</th><th>Meaning</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td class="code">1 . 1</td><td>1st conjugation</td><td><em>amo, amare</em></td></tr>
+          <tr><td class="code">2 . 1</td><td>2nd conjugation</td><td><em>moneo, monere</em></td></tr>
+          <tr><td class="code">3 . 1</td><td>3rd conjugation (or mixed, when stem 1 ends in <em>-i</em>)</td><td><em>rego, regere</em>; <em>capio, capere</em></td></tr>
+          <tr><td class="code">3 . 2</td><td><em>fero</em> and its compounds</td><td><em>fero, ferre</em>; <em>affero</em></td></tr>
+          <tr><td class="code">3 . 3</td><td><em>fio</em> and verbs made with it</td><td><em>fio, fieri</em></td></tr>
+          <tr><td class="code">3 . 4</td><td>4th conjugation</td><td><em>audio, audire</em></td></tr>
+          <tr><td class="code">5</td><td>compounds of <em>sum</em></td><td><em>absum, possum</em></td></tr>
+          <tr><td class="code">6 . 1</td><td><em>eo</em> and its compounds</td><td><em>abeo, adeo</em></td></tr>
+          <tr><td class="code">6 . 2</td><td><em>volo, nolo, malo</em></td><td><em>volo, velle</em></td></tr>
+          <tr><td class="code">7</td><td>defective verbs</td><td><em>aio, inquam, edo</em></td></tr>
+          <tr><td class="code">8</td><td>archaic alternative forms (the variant gives the normal conjugation)</td><td><em>amasso</em>, <em>capso</em></td></tr>
+          <tr><td class="code">9</td><td>indeclinable</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Noun and adjective declensions</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Declension</th><th>Nouns</th><th>Adjectives</th></tr></thead>
+        <tbody>
+          <tr><td class="code">0</td><td>–</td><td>comparative or superlative only, stem given directly</td></tr>
+          <tr><td class="code">1</td><td>1st declension (<em>puella</em>). Variants 6–8 are Greek types (<em>-e, -es, -as</em>)</td><td>1st &amp; 2nd declension (<em>bonus, bona, bonum</em>). Variant 2/4 = <em>-er</em> types; 3–5 = genitive in <em>-ius</em></td></tr>
+          <tr><td class="code">2</td><td>2nd declension (<em>-us, -um, -er</em>). Variants 6–9 are Greek types</td><td>Greek-type adjectives</td></tr>
+          <tr><td class="code">3</td><td>3rd declension (<em>rex, regis</em>)</td><td>3rd declension. Variant 1 = one termination, 2 = two, 3 = three</td></tr>
+          <tr><td class="code">4</td><td>4th declension (<em>manus</em>)</td><td>–</td></tr>
+          <tr><td class="code">5</td><td>5th declension (<em>res</em>)</td><td>–</td></tr>
+          <tr><td class="code">9</td><td>indeclinable (variant 8 = abbreviation)</td><td>indeclinable (variant 8 = abbreviation)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3>Pronoun declensions</h3>
+    <p>1 = <em>qui/quis</em> family (each variant is one form), 3 = <em>hic</em>, 4 = <em>is</em> (variant 2 = <em>idem</em>), 5 = personal pronouns (<em>ego, tu, nos, sui</em>), 6 = <em>ille</em> (variant 2 = <em>ipse</em>).</p>
+
+    <!-- ============================================================ -->
+    <h2 id="codes">6. Code tables</h2>
+    <p>Whitaker recorded most information as one-letter codes. The All fields page spells them out using these tables.</p>
+    <div id="codeTables"><p class="hint">The code tables need JavaScript to show.</p></div>
+
+    <!-- ============================================================ -->
+    <h2 id="senses">7. Reading the senses</h2>
+    <p>The <em>Senses</em> column is Whitaker's English definition, word for word. It uses a few conventions:</p>
+    <ul>
+      <li><strong>Semicolons</strong> separate different meanings; <strong>commas</strong> separate near-synonyms (<em>love, like; fall in love with</em>).</li>
+      <li><strong>A line starting with <code>|</code></strong> continues the meanings of the entry above it, for words with too many meanings for one line. The vocab pages join these on; All fields shows them as their own rows.</li>
+      <li><strong><code>[square brackets]</code></strong> hold example phrases or idioms. The vocab pages move these into <em>Additional Info</em>.</li>
+      <li><strong><code>=&gt;</code></strong> means “translates as” in a phrase, e.g. <em>multum posse =&gt; have much influence</em>.</li>
+      <li><strong><code>(w/-cumque)</code></strong> at the start of a packon gives the suffix it needs, e.g. <em>qu-</em> + <em>-cumque</em> = <em>quicumque</em>.</li>
+      <li><strong><code>~</code></strong> stands for the word itself inside a phrase.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2 id="excel">8. Copying into Excel</h2>
+    <ol>
+      <li>Open <a href="vocab-table.html">Vocab table</a> or <a href="all-fields.html">All fields</a> and wait for page 1 to appear. Each page is around 7,600–7,900 rows, so it can take a few seconds.</li>
+      <li>Click <strong>Copy page for Excel</strong>, then click cell <strong>A1</strong> in Excel and paste (Ctrl+V).</li>
+      <li>Click <strong>Page 2</strong>, copy again, and paste into the first empty row below. Repeat for pages 3–5. The header row is only copied with page 1, unless you tick <em>include header row</em>.</li>
+    </ol>
+    <p>Or use <strong>Download CSV</strong> to get every matching row in one file that opens straight in Excel. Search and filters apply to both, so you can copy just the common words, or just the verbs.</p>
+    <div class="note">Every page has the same number of English columns, so pasted pages always line up.</div>
+
+    <!-- ============================================================ -->
+    <h2 id="limits">9. Limitations</h2>
+    <ul>
+      <li><strong>No macrons.</strong> Whitaker's dictionary doesn't mark long vowels.</li>
+      <li><strong>Spelling.</strong> Some words use <em>j</em> (e.g. <em>jacio</em>), and spellings follow Whitaker's sources, not any one textbook.</li>
+      <li><strong><em>sum, esse</em> is missing</strong>, because WORDS builds it into the program instead of the dictionary file. Its compounds (<em>possum, absum</em>…) are included.</li>
+      <li><strong>Dictionary forms are rebuilt by rule</strong> from stems and declension/conjugation numbers. Common words have been checked, but rare Greek and archaic words may come out slightly wrong. The stems on the All fields page are always exactly what's in the data.</li>
+      <li><strong>Meanings of codes</strong> come from the WORDS documentation. The data file itself only has the letters.</li>
+      <li><strong>Duplicate-looking rows</strong> are usually real: a word may have a normal entry and an archaic-forms entry (e.g. <em>amo, amare, amavi, amatum</em> and <em>amo, amare, amasso</em>), or two different meanings.</li>
+    </ul>
+
+    <!-- ============================================================ -->
+    <h2 id="credits">10. Credits</h2>
+    <p>The dictionary is the work of the late Colonel William Whitaker, author of <a href="https://archives.nd.edu/words.html">WORDS</a>, a Latin–English dictionary and word-parsing program. His <code>DICTLINE</code> file was converted to JSON by the WORDS JSONisator. This site reads that JSON file in your browser; nothing is sent anywhere.</p>
+  </main>
+
+  <footer class="site-foot">
+    Dictionary data from William Whitaker's <a href="https://archives.nd.edu/words.html">WORDS</a>, converted to JSON by the WORDS JSONisator.
+    <a href="index.html">Back to home</a>.
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="raw.js"></script>
+  <script>
+    // Build the code tables from RAW_CODES in raw.js, so they always match the All fields page.
+    (() => {
+      const TABLES = [
+        ['pos', 'Part of speech'], ['age', 'Age'], ['geography', 'Geography'], ['area', 'Area'],
+        ['frequency', 'Frequency'], ['source', 'Source'], ['gender', 'Gender'], ['noun_kind', 'Noun kind'],
+        ['pronoun_kind', 'Pronoun kind & packon kind'], ['verb_kind', 'Verb kind'], ['comparison', 'Comparison'],
+        ['case', 'Case (prepositions)'], ['numeral_sort', 'Numeral sort'],
+      ];
+      const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;');
+      document.getElementById('codeTables').innerHTML = TABLES.map(([field, title]) => `
+        <h3 id="code-${field}">${esc(title)} <code>${field}</code></h3>
+        <div class="scroll"><table>
+          <thead><tr><th>Code</th><th>Meaning</th></tr></thead>
+          <tbody>${Object.entries(RAW_CODES[field]).map(([code, meaning]) =>
+            `<tr><td class="code"><code>${esc(code)}</code></td><td>${esc(meaning)}</td></tr>`).join('')}</tbody>
+        </table></div>`).join('');
+      // Jump to a #code-… link now that its heading exists.
+      if (location.hash.startsWith('#code-')) document.querySelector(location.hash)?.scrollIntoView();
+    })();
+  </script>
+</body>
+</html>

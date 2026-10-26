@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse · Latin Vocab</title>
+  <meta name="description" content="Search and browse about 38,000 Latin words from Whitaker's WORDS dictionary, with principal parts, word types and English meanings.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a2c1d'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <a class="brand" href="index.html">Whitaker's Words <span>· Latin vocab</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html" aria-current="page">Browse</a></li>
+      <li><a href="vocab-table.html">Vocab table</a></li>
+      <li><a href="all-fields.html">All fields</a></li>
+      <li><a href="guide.html">Guide</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <h1>Browse &amp; search</h1>
+    <p>100 words per page. Search in Latin or English, filter by word type or frequency. <a href="guide.html#vocab-columns">What do the columns mean?</a></p>
+  </header>
+
+  <div id="loader">
+    <p id="status">Loading dictionary (about 9 MB)…</p>
+    <div id="picker" hidden>
+      <input type="file" id="file" accept=".json,application/json">
+      <p>Or, from this folder, run <code>python -m http.server</code> and open <code>http://localhost:8000</code>.</p>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <div class="controls">
+      <label>Search
+        <input type="search" id="search" placeholder="e.g. amo, love, bell…" autocomplete="off">
+      </label>
+      <label>In
+        <select id="searchIn">
+          <option value="all">Latin &amp; English</option>
+          <option value="latin">Latin only</option>
+          <option value="english">English only</option>
+        </select>
+      </label>
+      <label>Word type
+        <select id="type"><option value="">All</option></select>
+      </label>
+      <label>Frequency
+        <select id="freq">
+          <option value="">Any</option>
+          <option value="A">Very frequent only (A)</option>
+          <option value="B">Frequent or higher (A–B)</option>
+          <option value="C">Common or higher (A–C)</option>
+          <option value="D">Lesser or higher (A–D)</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="dict">Dictionary order</option>
+          <option value="latin">Latin A–Z</option>
+          <option value="freq">Most frequent first</option>
+        </select>
+      </label>
+      <span class="spacer"></span>
+      <span id="count"></span>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead id="head"></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+
+    <div class="pager">
+      <button id="prev">← Prev</button>
+      <span id="pageInfo"></span>
+      <button id="next">Next →</button>
+    </div>
+  </div>
+
+  <footer class="site-foot">
+    Dictionary data from William Whitaker's <a href="https://archives.nd.edu/words.html">WORDS</a>, converted to JSON by the WORDS JSONisator.
+    Need the whole list in Excel? Use the <a href="vocab-table.html">vocab table</a>.
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

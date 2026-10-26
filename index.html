@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whitaker's Words · Latin Vocab</title>
+  <meta name="description" content="A free, searchable Latin–English vocabulary of about 38,000 words from William Whitaker's WORDS dictionary, ready to browse or copy into Excel.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a2c1d'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <a class="brand" href="index.html">Whitaker's Words <span>· Latin vocab</span></a>
+    <ul>
+      <li><a href="index.html" aria-current="page">Home</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li><a href="vocab-table.html">Vocab table</a></li>
+      <li><a href="all-fields.html">All fields</a></li>
+      <li><a href="guide.html">Guide</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <h1>Whitaker's Words</h1>
+    <p class="lede">A searchable Latin–English vocabulary of about 38,000 words, built from William Whitaker's WORDS dictionary. Look words up, or copy the whole list into a spreadsheet.</p>
+    <form class="quick-search" action="browse.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Search Latin or English…" aria-label="Search Latin or English" autocomplete="off">
+      <button class="primary" type="submit">Search</button>
+    </form>
+    <p class="examples">Try <a href="browse.html?q=amo">amo</a> · <a href="browse.html?q=bellum">bellum</a> · <a href="browse.html?q=king">king</a> · <a href="browse.html?q=sea">sea</a></p>
+
+    <div class="stats">
+      <div><strong>38,091</strong><span>words</span></div>
+      <div><strong>39,338</strong><span>dictionary entries</span></div>
+      <div><strong>10</strong><span>parts of speech</span></div>
+      <div><strong>25</strong><span>fields per entry</span></div>
+    </div>
+  </header>
+
+  <main class="prose">
+    <h2>Pick a view</h2>
+    <div class="cards">
+      <a class="card" href="browse.html">
+        <h3>Browse &amp; search</h3>
+        <p>The quickest way to look a word up. 100 words a page, with search, filters by word type and frequency, and sorting.</p>
+        <span class="go">Open Browse →</span>
+      </a>
+      <a class="card" href="vocab-table.html">
+        <h3>Vocab table</h3>
+        <p>The whole vocabulary as a spreadsheet: dictionary forms, word type, subtype, notes and English meanings. Five big pages, each with a one-click copy for Excel.</p>
+        <span class="go">Open Vocab table →</span>
+      </a>
+      <a class="card" href="all-fields.html">
+        <h3>All fields</h3>
+        <p>Everything the dictionary records about every entry: stems, era, region, subject area, frequency, source dictionary and grammar, with codes spelled out.</p>
+        <span class="go">Open All fields →</span>
+      </a>
+      <a class="card" href="guide.html">
+        <h3>Guide</h3>
+        <p>What every column means, what the codes stand for, how stems become dictionary forms, and how to get the tables into Excel.</p>
+        <span class="go">Read the guide →</span>
+      </a>
+    </div>
+
+    <h2>What a row looks like</h2>
+    <p>The Browse and Vocab table pages turn each dictionary entry into a row like these:</p>
+    <div class="scroll">
+      <table class="sample">
+        <thead>
+          <tr><th class="latin">Latin</th><th class="latin">Latin</th><th class="latin">Latin</th><th class="latin">Latin</th><th>Word type</th><th>Word Subtype</th><th>Additional Info</th><th>English</th><th>English</th><th>Frequency</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="latin">amo</td><td class="latin">amare</td><td class="latin">amavi</td><td class="latin">amatum</td><td>verb</td><td>1st conj</td><td class="info"></td><td>love</td><td>like</td><td class="freq f-A">very frequent</td></tr>
+          <tr><td class="latin">rex</td><td class="latin">regis</td><td class="latin"></td><td class="latin"></td><td>noun</td><td>3rd declension</td><td class="info">masculine; person; legal</td><td>king</td><td></td><td class="freq f-A">very frequent</td></tr>
+          <tr><td class="latin">bonus</td><td class="latin">bona</td><td class="latin">bonum</td><td class="latin"></td><td>adjective</td><td>1st &amp; 2nd declension</td><td class="info">comp. melior, sup. optimus</td><td>good</td><td>honest</td><td class="freq f-A">very frequent</td></tr>
+          <tr><td class="latin">hortor</td><td class="latin">hortari</td><td class="latin">hortatus sum</td><td class="latin"></td><td>deponent verb</td><td>1st conj</td><td class="info"></td><td>encourage</td><td>cheer</td><td class="freq f-B">frequent</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="hint">Real rows have as many English columns as the word has meanings.</p>
+
+    <h2>About the dictionary</h2>
+    <p>The late Colonel William Whitaker spent years compiling WORDS, a Latin dictionary and word-parsing program of around 39,000 entries drawn from classical, medieval and church Latin sources. The WORDS JSONisator turned his plain-text dictionary file into JSON, and this site builds dictionary forms, word types and English meanings from that file in your browser.</p>
+    <div class="note">
+      <strong>Good to know:</strong> spellings are Whitaker's, so there are no macrons and some words start with <em>j</em> where your textbook may use <em>i</em> (e.g. <em>jacio</em> for <em>iacio</em>). The verb <em>sum, esse</em> isn't in the data file, because WORDS handles it separately. <a href="guide.html#limits">More about limitations</a>.
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    Dictionary data from William Whitaker's <a href="https://archives.nd.edu/words.html">WORDS</a>, converted to JSON by the WORDS JSONisator.
+    New to the site? Read the <a href="guide.html">guide</a>.
+  </footer>
+</body>
+</html>

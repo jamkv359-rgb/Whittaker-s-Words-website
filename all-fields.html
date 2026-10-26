@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Fields · Latin Vocab</title>
+  <meta name="description" content="Every field of every Whitaker's WORDS dictionary entry (stems, age, area, geography, frequency, source and grammar), with the codes spelled out.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%238a2c1d'/%3E%3Ctext x='16' y='24' font-family='Georgia,serif' font-size='22' font-weight='bold' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Site">
+    <a class="brand" href="index.html">Whitaker's Words <span>· Latin vocab</span></a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li><a href="vocab-table.html">Vocab table</a></li>
+      <li><a href="all-fields.html" aria-current="page">All fields</a></li>
+      <li><a href="guide.html">Guide</a></li>
+    </ul>
+  </nav>
+
+  <header class="page-head">
+    <h1>All fields</h1>
+    <p>Every field of every dictionary entry, one row per entry, with Whitaker's letter codes spelled out. Split into 5 pages for copying into Excel. <a href="guide.html#fields-columns">What each column means</a> · <a href="guide.html#codes">code tables</a></p>
+  </header>
+
+  <div id="loader">
+    <p id="status">Loading dictionary (about 9 MB)…</p>
+    <div id="picker" hidden>
+      <input type="file" id="file" accept=".json,application/json">
+      <p>Or, from this folder, run <code>python -m http.server</code> and open <code>http://localhost:8000</code>.</p>
+    </div>
+  </div>
+
+  <div id="app" hidden>
+    <div class="controls">
+      <label>Search
+        <input type="search" id="search" placeholder="e.g. am, love, bell…" autocomplete="off">
+      </label>
+      <label>In
+        <select id="searchIn">
+          <option value="all">Stems &amp; senses</option>
+          <option value="latin">Stems only</option>
+          <option value="english">Senses only</option>
+        </select>
+      </label>
+      <label>Word type
+        <select id="type"><option value="">All</option></select>
+      </label>
+      <label>Frequency
+        <select id="freq">
+          <option value="">Any</option>
+          <option value="A">Very frequent only (A)</option>
+          <option value="B">Frequent or higher (A–B)</option>
+          <option value="C">Common or higher (A–C)</option>
+          <option value="D">Lesser or higher (A–D)</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="sort">
+          <option value="dict">Dictionary order</option>
+          <option value="latin">Latin A–Z</option>
+          <option value="freq">Most frequent first</option>
+        </select>
+      </label>
+      <span class="spacer"></span>
+      <span id="count"></span>
+      <button id="csv" title="Download the filtered rows as a CSV that opens in Excel">Download CSV</button>
+    </div>
+
+    <div class="pages">
+      <span id="pages" class="pages" style="padding:0"></span>
+      <button id="copy" title="Copy this page as tab-separated text for pasting into Excel">Copy page for Excel</button>
+      <label class="hint"><input type="checkbox" id="copyHeader"> include header row on pages 2–5</label>
+      <span id="copyMsg"></span>
+    </div>
+    <p class="hint">Paste page 1 into cell A1, then paste each following page into the first empty row below it.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead id="head"></thead>
+        <tbody id="body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <footer class="site-foot">
+    Dictionary data from William Whitaker's <a href="https://archives.nd.edu/words.html">WORDS</a>, converted to JSON by the WORDS JSONisator.
+    Just want the vocab? See the <a href="vocab-table.html">vocab table</a>.
+  </footer>
+
+  <script src="app.js"></script>
+  <script src="raw.js"></script>
+  <script src="all.js"></script>
+</body>
+</html>
